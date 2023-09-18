@@ -59,7 +59,7 @@ ftd.color-scheme color-scheme:
 
 -- ftd.row:
 wrap: true
-padding.rem: 2
+padding-horizontal.rem: 2
 spacing: space-between
 
 -- social-link-with-icon: $social-links.twitter
