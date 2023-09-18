@@ -1,6 +1,7 @@
 -- import: harshdoesdev.github.io/hacktree-ui/utility
 -- import: harshdoesdev.github.io/hacktree-ui/components
 -- import: harshdoesdev.github.io/hacktree-ui/assets
+-- import: fastn-community.github.io/winter-cs
 
 -- component bio:
 caption string name:
@@ -14,7 +15,7 @@ optional string linked-in:
 optional string youtube:
 optional string company:
 optional string location:
-ftd.color-scheme color-scheme: $cs.main
+ftd.color-scheme color-scheme: $winter-cs.main
 
 -- ftd.document:
 title: $bio.name
@@ -83,59 +84,14 @@ color: $inherited.colors.text
 role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
 
--- ftd.row:
-wrap: true
-padding.rem: 2
-spacing: space-between
-
--- ftd.row:
-wrap: true
-spacing: space-between
-
--- components.social-link-with-icon: $bio.twitter
-if: { !ftd.is_empty(bio.twitter) }
-base-url: https://twitter.com/
-icon-src: $assets.files.images.social.twitter.svg
-
-Twitter
-
--- components.social-link-with-icon: $bio.github
-if: { !ftd.is_empty(bio.github) }
-base-url: https://github.com/
-icon-src: $assets.files.images.social.github.svg
-
-Github
-
--- components.social-link-with-icon: $bio.youtube
-if: { !ftd.is_empty(bio.youtube) }
-base-url: https://youtube.com/
-icon-src: $assets.files.images.social.youtube.svg
-
-Youtube
-
--- components.social-link-with-icon: $bio.linked-in
-if: { !ftd.is_empty(bio.linked-in) }
-base-url: https://linkedin.com/in/
-icon-src: $assets.files.images.social.linkedin.svg
-
-LinkedIn
-
--- components.social-link-with-icon: $bio.website
-if: { !ftd.is_empty(bio.website) }
-icon-src: $assets.files.images.social.google-chrome.svg
-
-Website
-
--- components.social-link-with-icon: $bio.email
-if: { !ftd.is_empty(bio.email) }
-is-email: true
-icon-src: $assets.files.images.social.gmail.svg
-
-Email
-
--- end: ftd.row
-
--- end: ftd.row
+-- components.social-links:
+website: $bio.website
+email: $bio.email
+github: $bio.github
+twitter: $bio.twitter
+linked-in: $bio.linked-in
+youtube: $bio.youtube
+color-scheme: $bio.color-scheme
 
 -- end: ftd.column
 
