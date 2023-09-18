@@ -1,5 +1,5 @@
--- import: hacktree-ui/assets
--- import: hacktree-ui/utility
+-- import: harshdoesdev.github.io/hacktree-ui/assets
+-- import: harshdoesdev.github.io/hacktree-ui/utility
 
 ;; Components
 
