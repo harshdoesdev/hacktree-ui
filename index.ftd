@@ -1,6 +1,6 @@
--- import: hacktree-ui/utility
--- import: hacktree-ui/components
--- import: hacktree-ui/assets
+-- import: harshdoesdev.github.io/hacktree-ui/utility
+-- import: harshdoesdev.github.io/hacktree-ui/components
+-- import: harshdoesdev.github.io/hacktree-ui/assets
 
 -- component bio:
 caption string name:
