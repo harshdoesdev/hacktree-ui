@@ -1,0 +1,47 @@
+-- import: hacktree-ui/assets
+-- import: hacktree-ui/utility
+
+;; Components
+
+-- component icon:
+caption ftd.image-src src:
+
+-- ftd.image:
+src: $icon.src
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- end: icon
+
+
+
+-- component social-link-with-icon:
+caption string url:
+body string text:
+ftd.image-src icon-src:
+optional string base-url:
+boolean is-email: false
+boolean $hovering: false
+ftd.color-scheme color-scheme: $cs.main
+
+-- ftd.row:
+padding.rem: 1
+spacing.fixed.rem: 1
+align-content: center
+link: $social-link-with-icon.url
+link if { social-link-with-icon.is-email }: $utility.get-mail-link(a = $social-link-with-icon.url)
+link if { !ftd.is_empty(social-link-with-icon.base-url) }: $utility.with-base-url(a = $social-link-with-icon.base-url, b = $social-link-with-icon.url)
+open-in-new-tab: true
+$on-mouse-enter$: $ftd.set-boolean($a = $social-link-with-icon.hovering, v = true)
+$on-mouse-leave$: $ftd.set-boolean($a = $social-link-with-icon.hovering, v = false)
+
+-- icon: $social-link-with-icon.icon-src
+
+-- ftd.text: $social-link-with-icon.text
+style if { social-link-with-icon.hovering }: underline
+role: $inherited.types.copy-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.row
+
+-- end: social-link-with-icon
