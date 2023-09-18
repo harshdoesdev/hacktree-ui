@@ -3,5 +3,3 @@
 -- fastn.package: harshdoesdev.github.io/hacktree-ui
 
 -- fastn.dependency: fastn-community.github.io/winter-cs
-
--- fastn.auto-import: fastn-community.github.io/winter-cs as cs

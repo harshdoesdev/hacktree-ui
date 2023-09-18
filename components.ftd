@@ -22,7 +22,7 @@ ftd.image-src icon-src:
 optional string base-url:
 boolean is-email: false
 boolean $hovering: false
-ftd.color-scheme color-scheme: $cs.main
+ftd.color-scheme color-scheme:
 
 -- ftd.row:
 padding.rem: 1
@@ -45,3 +45,70 @@ color: $inherited.colors.text-strong
 -- end: ftd.row
 
 -- end: social-link-with-icon
+
+
+
+-- component social-links:
+optional string website:
+optional string email:
+optional string github:
+optional string twitter:
+optional string linked-in:
+optional string youtube:
+ftd.color-scheme color-scheme:
+
+-- ftd.row:
+wrap: true
+padding.rem: 2
+spacing: space-between
+
+-- social-link-with-icon: $social-links.twitter
+if: { !ftd.is_empty(social-links.twitter) }
+color-scheme: $social-links.color-scheme
+base-url: https://twitter.com/
+icon-src: $assets.files.images.social.twitter.svg
+
+Twitter
+
+-- social-link-with-icon: $social-links.github
+if: { !ftd.is_empty(social-links.github) }
+color-scheme: $social-links.color-scheme
+base-url: https://github.com/
+icon-src: $assets.files.images.social.github.svg
+
+Github
+
+-- social-link-with-icon: $social-links.youtube
+if: { !ftd.is_empty(social-links.youtube) }
+color-scheme: $social-links.color-scheme
+base-url: https://youtube.com/
+icon-src: $assets.files.images.social.youtube.svg
+
+Youtube
+
+-- social-link-with-icon: $social-links.linked-in
+if: { !ftd.is_empty(social-links.linked-in) }
+color-scheme: $social-links.color-scheme
+base-url: https://linkedin.com/in/
+icon-src: $assets.files.images.social.linkedin.svg
+
+LinkedIn
+
+-- social-link-with-icon: $social-links.website
+if: { !ftd.is_empty(social-links.website) }
+color-scheme: $social-links.color-scheme
+icon-src: $assets.files.images.social.google-chrome.svg
+
+Website
+
+-- social-link-with-icon: $social-links.email
+if: { !ftd.is_empty(social-links.email) }
+color-scheme: $social-links.color-scheme
+is-email: true
+icon-src: $assets.files.images.social.gmail.svg
+
+Email
+
+-- end: ftd.row
+
+-- end: social-links
