@@ -1,0 +1,15 @@
+-- string with-base-url(a,b):
+string a:
+string b:
+
+a + "" + b
+
+-- string get-mail-link(a):
+string a:
+
+"mailto://" + a
+
+-- string format-nickname(a):
+string a:
+
+"aka. " + a

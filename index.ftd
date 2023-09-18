@@ -1,0 +1,154 @@
+-- import: hacktree-ui/utility
+-- import: hacktree-ui/components
+-- import: hacktree-ui/assets
+
+-- component bio:
+caption string name:
+body string about:
+optional string nickname:
+optional string website:
+optional string email:
+optional string github:
+optional string twitter:
+optional string linked-in:
+optional string youtube:
+optional string company:
+optional string location:
+ftd.color-scheme color-scheme: $cs.main
+
+-- ftd.document:
+title: $bio.name
+description: $bio.about
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+background.solid: $inherited.colors.background.base
+align-content: center
+spacing.fixed.rem: 2
+
+-- ftd.row:
+align-content: center
+spacing.fixed.rem: 1
+
+-- ftd.text: $bio.name
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.text: $utility.format-nickname(a = $bio.nickname)
+if: { !ftd.is_empty(bio.nickname) }
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { !ftd.is_empty(bio.company) || !ftd.is_empty(bio.location) }
+spacing.fixed.rem: 1
+align-content: center
+
+-- ftd.row:
+align-content: center
+spacing.fixed.rem: .5
+if: { !ftd.is_empty(bio.company) }
+
+-- ftd.image: $assets.files.images.business.svg
+width.fixed.px: 16
+height.fixed.px: 16
+
+-- ftd.text: $bio.company
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+align-content: center
+spacing.fixed.rem: .5
+if: { !ftd.is_empty(bio.location) }
+
+-- ftd.image: $assets.files.images.location.svg
+width.fixed.px: 16
+height.fixed.px: 16
+
+-- ftd.text: $bio.location
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.text: $bio.about
+role: $inherited.types.copy-regular
+color: $inherited.colors.text-strong
+
+-- ftd.row:
+wrap: true
+padding.rem: 2
+spacing: space-between
+
+-- ftd.row:
+wrap: true
+spacing: space-between
+
+-- components.social-link-with-icon: $bio.twitter
+if: { !ftd.is_empty(bio.twitter) }
+base-url: https://twitter.com/
+icon-src: $assets.files.images.social.twitter.svg
+
+Twitter
+
+-- components.social-link-with-icon: $bio.github
+if: { !ftd.is_empty(bio.github) }
+base-url: https://github.com/
+icon-src: $assets.files.images.social.github.svg
+
+Github
+
+-- components.social-link-with-icon: $bio.youtube
+if: { !ftd.is_empty(bio.youtube) }
+base-url: https://youtube.com/
+icon-src: $assets.files.images.social.youtube.svg
+
+Youtube
+
+-- components.social-link-with-icon: $bio.linked-in
+if: { !ftd.is_empty(bio.linked-in) }
+base-url: https://linkedin.com/in/
+icon-src: $assets.files.images.social.linkedin.svg
+
+LinkedIn
+
+-- components.social-link-with-icon: $bio.website
+if: { !ftd.is_empty(bio.website) }
+icon-src: $assets.files.images.social.google-chrome.svg
+
+Website
+
+-- components.social-link-with-icon: $bio.email
+if: { !ftd.is_empty(bio.email) }
+is-email: true
+icon-src: $assets.files.images.social.gmail.svg
+
+Email
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.document
+
+-- end: bio
+
+
+
+
+
+-- bio: Hacktree
+github: harshdoesdev/hacktree
+
+
+Create your own link-in-bio using fastn
