@@ -60,7 +60,7 @@ ftd.color-scheme color-scheme:
 -- ftd.row:
 wrap: true
 padding-horizontal.rem: 2
-spacing: space-between
+align-content: center
 
 -- social-link-with-icon: $social-links.twitter
 if: { !ftd.is_empty(social-links.twitter) }
