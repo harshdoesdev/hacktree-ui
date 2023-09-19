@@ -81,6 +81,7 @@ color: $inherited.colors.text
 -- end: ftd.row
 
 -- ftd.text: $bio.about
+text-align: center
 role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
 padding.rem: 1
