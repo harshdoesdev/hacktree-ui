@@ -49,9 +49,9 @@ spacing.fixed.rem: 1
 align-content: center
 
 -- ftd.row:
+if: { !ftd.is_empty(bio.company) }
 align-content: center
 spacing.fixed.rem: .5
-if: { !ftd.is_empty(bio.company) }
 
 -- ftd.image: $assets.files.images.business.svg
 width.fixed.px: 16
